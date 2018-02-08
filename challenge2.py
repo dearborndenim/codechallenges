@@ -1,20 +1,14 @@
 from random import randint
+from pprint import pprint
 
-listlength = range(1000)
+counter={}
+for x in range(1000):
+    number = randint(1,20)
+    if number not in counter:
+        counter[number] = 1
+        continue
 
-counter = {}
-for x in range(1,21):
-	counter[x]=0
+    if number in counter:
+        counter[number] += 1
 
-randomlist = []
-
-for x in listlength:
-	randomlist.append(randint(1,20))
-
-for k in randomlist:
-		counter[randomlist[k]]+=1
-
-for i in counter:
-	print (counter[i])
-
-input()
+pprint(counter)
